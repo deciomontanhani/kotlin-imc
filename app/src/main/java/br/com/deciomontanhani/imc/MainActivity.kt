@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
         val imc = peso / (altura * altura)
 
         when(imc) {
-            0.0, 18.5 -> configuraIMC(imc, R.drawable.masc_abaixo, R.string.magreza)
-            18.6, 24.9 -> configuraIMC(imc, R.drawable.masc_ideal, R.string.peso_normal)
-            25.0, 29.9 -> configuraIMC(imc, R.drawable.masc_sobre, R.string.sobre_Peso)
-            30.0, 34.9 -> configuraIMC(imc, R.drawable.masc_obeso, R.string.obesidade_grau_i)
-            35.0, 39.9 -> configuraIMC(imc, R.drawable.masc_extremo_obeso, R.string.obesidade_grau_ii)
+            in 0.0..18.5 -> configuraIMC(imc, R.drawable.masc_abaixo, R.string.magreza)
+            in 18.6..24.9 -> configuraIMC(imc, R.drawable.masc_ideal, R.string.peso_normal)
+            in 25.0..29.9 -> configuraIMC(imc, R.drawable.masc_sobre, R.string.sobre_Peso)
+            in 30.0..34.9 -> configuraIMC(imc, R.drawable.masc_obeso, R.string.obesidade_grau_i)
+            in 35.0..39.9 -> configuraIMC(imc, R.drawable.masc_extremo_obeso, R.string.obesidade_grau_ii)
             else -> configuraIMC(imc, R.drawable.masc_extremo_obeso, R.string.obesidade_grau_iii)
 
         }
